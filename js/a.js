@@ -1,0 +1,21 @@
+$('.b1').click(function(){
+    $.ajax({
+        method:'post',
+        url:'http://localhost/code/php/addwq.php',
+        dataType:'json',
+        data:{
+            id:'333',
+            name:"华为至尊10",
+            img:'../img/favicon/7.jpg',
+            num:1,
+            price:5000
+        },
+        success:function(res){
+            if(res.code){
+                alert('商品加入成功')
+            }else{
+                alert('商品加入失败')
+            }
+        }
+    })
+})

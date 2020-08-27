@@ -1,0 +1,21 @@
+$('#submit').click(function(){
+     $.ajax({
+         method:'post',
+         url:'http://localhost/code/php/register.php',
+         data:{
+             username:$('#un').val(),
+             password:$('#pw').val()
+         },
+         success:function(data){
+             console.log(data)
+             if(data.code==1){
+                 //表示成功,跳转到登陆页面
+                 location.href="../html/index3.html"
+             }else{
+                 //表示失败
+                 alert(data.msg)
+             }
+         },
+         dataType:'json'
+     })
+ })
